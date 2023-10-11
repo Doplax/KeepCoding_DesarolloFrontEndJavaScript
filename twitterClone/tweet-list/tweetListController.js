@@ -4,7 +4,7 @@ import { getTweets } from "./tweetListModel";
 
 export const tweetListController = (tweetList) => {
     getTweets().then(tweets =>{
-        tweets.forEach(element => {
+        tweets.forEach(tweet => {
             const tweetContainer = document.createElement('div');
             tweetContainer.classList.add('tweetContainer');
 
