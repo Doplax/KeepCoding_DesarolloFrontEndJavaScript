@@ -8,7 +8,7 @@ export const tweetListController = (tweetList) => {
             const tweetContainer = document.createElement('div');
             tweetContainer.classList.add('tweetContainer');
 
-            //tweetContainer.innerHTML = buildTweet(tweet)
+            tweetContainer.innerHTML = buildTweet(tweet)
             tweetList.appendChild(tweetContainer)
         });
     } )
