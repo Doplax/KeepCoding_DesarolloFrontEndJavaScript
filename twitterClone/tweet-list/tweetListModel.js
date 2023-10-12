@@ -9,15 +9,22 @@ const transformTweets = (tweets) => {
     }))
 }
 
-export const getTweets = () => {
+export const getTweets = async () => {
     const url = "https://feke-tweets-api-kccerce.app/posts"
 
-    return new Promise((resolve, reject) => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((tweets) =>{
-                const parsedTweets = transformTweets(tweets);
-                resolve(parsedTweets);
-            })
-    });
+    // Promesas
+    //return new Promise((resolve, reject) => {
+    //    fetch(url)
+    //        .then((response) => response.json())
+    //        .then((tweets) =>{
+    //            const parsedTweets = transformTweets(tweets);
+    //            resolve(parsedTweets);
+    //        })
+    //});
+
+    // Async Await
+    const response = await fetch(url)
+    const tweets = await response.json()
+    const parsedTweets = transformTweets(tweets)
+    return parsedTweets
 }
