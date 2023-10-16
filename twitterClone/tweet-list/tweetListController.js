@@ -17,8 +17,10 @@ export const tweetListController = async (tweetList) => {
             tweetContainer.innerHTML = buildTweet(tweet)
             tweetList.appendChild(tweetContainer)
         });
-    }
-
- 
     
+    const event = new CustomEvent("tweetsLoaded")
+    tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
+
+    
+    }
 }

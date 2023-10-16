@@ -6,11 +6,12 @@ const transformTweets = (tweets) => {
         date: new Date().toISOString(),
         message:tweet.message,
         likes: tweet.likes.lenght,
+        image: tweet.image,
     }))
 }
 
 export const getTweets = async () => {
-    const url = "https://feke-tweets-api-kccerce.app/posts"
+    const url = "https://localhost:8000/api "
     let parsedTweets = [];
     // Async Await
 
