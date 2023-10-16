@@ -29,4 +29,6 @@ tweetList.addEventListener('tweetsLoaded', (event) => {
     showNotifications(message, type);
 })
 
-
+window.addEventListener('offline', () => {
+    showNotifications('se ha perdido la conexión', 'error');    
+})
