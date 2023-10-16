@@ -8,13 +8,7 @@ export const tweetListController = async (tweetList) => {
     try {
         tweets = await getTweets()
     } catch (err) {
-        const event = new CustomEvent("tweetsLoaded",{
-            detail: {
-                type: 'error',
-                message: 'Error cargando tweets'
-            },
-    
-        })
+        const event = createCustomEvent('error', 'Error al cargar los tweets');
         tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
     }
 
@@ -30,15 +24,18 @@ export const tweetListController = async (tweetList) => {
             tweetList.appendChild(tweetContainer)
         });
     
+    const event = createCustomEvent('success', 'tweets loaded successfully')
+    tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
+    }
+}
+
+const createCustomEvent = (type, message) => {
     const event = new CustomEvent("tweetsLoaded",{
         detail: {
-            type: 'success',
-            message: 'tweets loaded successfully'
+            type: type,
+            message: message,
         },
 
     })
-    tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
-
-
-    }
+    return event
 }
