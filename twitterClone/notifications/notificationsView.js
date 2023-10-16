@@ -1,5 +1,7 @@
-export const buildNotifications = (message) => {
+export const buildNotifications = (message, type) => {
     return `
-    <p>${message}</p>
+    <div class="notification ${type}" >
+        <p>${message}</p>
+    </div>
     `
 }

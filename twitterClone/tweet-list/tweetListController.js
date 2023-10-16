@@ -13,20 +13,22 @@ export const tweetListController = async (tweetList) => {
     }
 
     if (tweets.length === 0) {
-        //window.alert("No hay tweets disponibles")
         tweetContainer.innerHTML = emptyTweets();
     } else {
-        tweets.forEach(tweet => {
-            const tweetContainer = document.createElement('div');
-            tweetContainer.classList.add('tweetContainer');
-    
-            tweetContainer.innerHTML = buildTweet(tweet)
-            tweetList.appendChild(tweetContainer)
-        });
-    
-    const event = createCustomEvent('success', 'tweets loaded successfully')
-    tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
+        renderTweet(tweets, tweetList);
+        const event = createCustomEvent('success', 'tweets loaded successfully')
+        tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
     }
+}
+
+const renderTweet = (tweets, tweetList) => {
+    tweets.forEach(tweet => {
+        const tweetContainer = document.createElement('div');
+        tweetContainer.classList.add('tweetContainer');
+
+        tweetContainer.innerHTML = buildTweet(tweet)
+        tweetList.appendChild(tweetContainer)
+    });
 }
 
 const createCustomEvent = (type, message) => {

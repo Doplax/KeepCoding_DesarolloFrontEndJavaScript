@@ -23,7 +23,10 @@ hideTweetsButton.addEventListener('click', () => {
 })
 
 tweetList.addEventListener('tweetsLoaded', (event) => { 
-    showNotifications(event.detail.message)
+    const message = event.detail.message
+    const type = event.detail.type;
+    
+    showNotifications(message, type);
 })
 
 
