@@ -22,6 +22,6 @@ hideTweetsButton.addEventListener('click', () => {
     tweetList.classList.toggle('hidden');
 })
 
-tweetList.addEventListener('tweetsLoaded', () => {
-    console.log('Los tweets han sido cargados!!');
+tweetList.addEventListener('tweetsLoaded', (event) => { 
+    showNotifications(event.detail.message)
 })

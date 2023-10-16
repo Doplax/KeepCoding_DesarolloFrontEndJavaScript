@@ -21,7 +21,7 @@ export const getTweets = async () => {
         parsedTweets = transformTweets(tweets)
 
     } catch (error) {
-        console.log('Algo malo ocurrió');
+        throw error
     }
 
     return parsedTweets

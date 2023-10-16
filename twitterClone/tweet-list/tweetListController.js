@@ -4,7 +4,19 @@ import { getTweets } from "./tweetListModel";
 
 export const tweetListController = async (tweetList) => {
     tweetList.innerHTML = ""; // Limpia los tweets
-    const tweets = await getTweets()
+    let tweets = []
+    try {
+        tweets = await getTweets()
+    } catch (err) {
+        const event = new CustomEvent("tweetsLoaded",{
+            detail: {
+                type: 'error',
+                message: 'Error cargando tweets'
+            },
+    
+        })
+        tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
+    }
 
     if (tweets.length === 0) {
         //window.alert("No hay tweets disponibles")
@@ -18,9 +30,15 @@ export const tweetListController = async (tweetList) => {
             tweetList.appendChild(tweetContainer)
         });
     
-    const event = new CustomEvent("tweetsLoaded")
+    const event = new CustomEvent("tweetsLoaded",{
+        detail: {
+            type: 'success',
+            message: 'tweets loaded successfully'
+        },
+
+    })
     tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
 
-    
+
     }
 }
