@@ -3,10 +3,12 @@ import { getTweets } from "./tweetListModel";
 
 
 export const tweetListController = async (tweetList) => {
+    tweetList.innerHTML = ""; // Limpia los tweets
     const tweets = await getTweets()
 
     if (tweets.length === 0) {
-        window.alert("No hay tweets disponibles")
+        //window.alert("No hay tweets disponibles")
+        tweetContainer.innerHTML = emptyTweets();
     } else {
         tweets.forEach(tweet => {
             const tweetContainer = document.createElement('div');
