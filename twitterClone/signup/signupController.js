@@ -1,27 +1,47 @@
 export const signupController = (sigupForm) => {
-    // Añadir escuchador al formulario para saber cúando se rellena
-    sigupForm.addEventListener('submit',() => {
+    signupForm.addeventListener('submit',(event)=> validateForm(event, sigupForm)) //
+}
+
+const validateForm = (event, signupForm) => {
+    sigupForm.addEventListener('submit',(event) => {
+        event.preventDefault();
 
         // Extraer datos del formulario
         const email = sigupForm.querySelector('#email');
         const password = sigupForm.querySelector('#password');
         const passwordConfirmation = sigupForm.querySelector('#password-confirmation');
         
-        // Validar Email
-        const emailReRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-        if (emailReRegExp.test(email)) {
-            alert('El email no es correcto');
-        }
-
-        // Validar contraseña
-        if (password.value !== passwordConfirmation.value) {
-            alert('las contraseñas no son iguales');
+        if (isFormValid(email, password, passwordConfirmation)) {
+            createUser(email, password)
         }
     })
+}
 
-    // Feedback al usuario
+const isFormValid = (email, password, passwordConfirmation) => {
+    const emailValidation =  isEmailValid(email);
+    const passwordValidation = isPasswordValid(password, passwordConfirmation)
 
-    // Crear usuario contra Sparrest
+    return emailValidation && passwordValidation;
+}
 
-    // Ejecutar lógica cuando se rellene el formulario
+const isEmailValid = (email) => {
+    // Validar Email
+    const emailReRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    let result = true
+
+    if (emailReRegExp.test(email)) {
+        alert('El email no es correcto');
+        result = false;
+    }
+    return result
+}
+
+const isPasswordValid = (password, passwordConfirmation) => {
+    let result = true;
+
+    if (password.value !== passwordConfirmation.value) {
+        alert('las contraseñas no son iguales');
+        result = false;
+    }   
+    return result;
 }
