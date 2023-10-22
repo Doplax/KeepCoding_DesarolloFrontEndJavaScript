@@ -6,10 +6,13 @@ export const tweetListController = async (tweetList) => {
     tweetList.innerHTML = ""; // Limpia los tweets
     let tweets = []
     try {
+        dispatchEvent('startLoadingTweets', null, tweetList) // Ahora está disparando el evento
         tweets = await getTweets()
     } catch (err) {
         const event = createCustomEvent('error', 'Error al cargar los tweets');
         tweetList.dispatchEvent(event); // Dispara un evento hacia arriba
+    } finally {
+        dispatchEvent('finishLoadingTweets', null, tweetList) 
     }
 
     if (tweets.length === 0) {
@@ -40,4 +43,10 @@ const createCustomEvent = (type, message) => {
 
     })
     return event
+}
+
+const dispatchEvent = (eventName, data, element) => {
+    const event = new CustomEvent(eventName, {
+        detail: data
+    });
 }

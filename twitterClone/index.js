@@ -5,6 +5,8 @@ import { tweetListController } from './tweetListController'
 const notifications = document.getElementById('notifications')
 
 const showNotifications = notificationsController(notifications)
+const loader = document.getElementById('loader')
+const { showLoader, hideLoader } = loaderController(loader)
 
 document.addEventListener('DOMContentLoaded', () => {
     const tweetList = document.getElementById('tweets')
@@ -12,6 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tweetList.addEventListener('tweetsLoaded', (event) => {
         showNotifications(event.detail.message, event.detail.type);
+    })
+
+    tweetList.addEventListener('startLoadingTweets', (event) => {
+        showLoader()
+    })
+
+    tweetList.addEventListener('finishLoadingTweets', (event) => {
+        hideLoader()
     })
 
     const session = document.getElementById('session')
