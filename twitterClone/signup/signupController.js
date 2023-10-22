@@ -15,21 +15,19 @@ const validateForm = async (event, signupForm) => {
     if (isFormValid(email, password, passwordConfirmation)) {
         try {
             await createUser(email.value, password.value)
-            const event = new CustomEvent('userCreated', {
-                detail: {
-                    type: 'success',
-                    message: 'Usuario creado correctamente'
-                }
-            })
+
+            dispatchEvent('userCreated', {
+                type: 'success',
+                message: 'Usuario creado correctamente'
+            }, signupForm)
+            
         signupForm.dispatchEvent(event)
         } catch (error) {
-            const event = new CustomEvent('userCreated', {
-                detail: {
-                    type: 'error',
-                    message: error,
-                }
-            })
-        signupForm.dispatchEvent(event)
+            dispatchEvent('userCreated', {
+                type: 'error',
+                message: error,
+            }, signupForm)
+            
         }
     }
 }
@@ -61,4 +59,12 @@ const isPasswordValid = (password, passwordConfirmation) => {
         result = false;
     }   
     return result;
+}
+
+const dispatchEvent = (eventName, data, signupForm) => {
+    const event = new CustomEvent(eventName, {
+        detail: data
+    })
+    signupForm.dispatchEvent(event)
+
 }
