@@ -19,10 +19,15 @@ export const loginUser = async (email, password) => {
 
             }
         })
-
+        
+        const data = await response.json()
+        
         if (!response.ok) { // Dará OK si la respuesta se encuentra entre 200 y 299
-            const data = await response.json()
             throw new Error(data.message);
+        }
+
+        if (response.ok) { 
+            return data.accesToken
         }
 
     } catch (error) {
