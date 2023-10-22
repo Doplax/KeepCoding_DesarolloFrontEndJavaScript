@@ -1,4 +1,4 @@
-export const buildSession = () => {
+export const buildUnauthorizedSession = () => {
     return `
     <ul>
         <li>
@@ -6,5 +6,11 @@ export const buildSession = () => {
             <a href="./signup.html">Signup</a>
         </li>
     </ul>
+    `
+}
+
+export const buildAuthenticatedSession = () => {
+    return `
+    <button>Logout</button>
     `
 }

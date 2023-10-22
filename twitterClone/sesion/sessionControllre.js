@@ -1,12 +1,19 @@
-import { buildSession } from "./sesionView.js";
+import { buildUnauthorizedSession, buildAuthenticatedSession } from "./sesionView.js";
 
 export const sessionController = (nav) => {
 
-    // consultamos si el usuario ha hecho login
-    const token = localStorage.getItem('token')
-
-    // En caso negativo, incluimos los links a login y signup
-    if (!token) {
-        nav.innerHTML = buildSession();
+    if (isUserLoggedIn()) {
+        nav.innerHTML = buildSessbuildAuthenticatedSessionion();
+        const logoutButton = nav.querySelector('button');
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('token');
+            sessionController(nav) // Función recursiva
+        });
+    } else {
+        nav.innerHTML = buildUnauthorizedSession();        
     }
+}
+
+const isUserLoggedIn = () => {
+    return localStorage.getItem('token') 
 }
