@@ -1,20 +1,25 @@
+import { createUser } from "./signupModel"
+
 export const signupController = (sigupForm) => {
     signupForm.addeventListener('submit',(event)=> validateForm(event, sigupForm)) //
 }
 
-const validateForm = (event, signupForm) => {
-    sigupForm.addEventListener('submit',(event) => {
-        event.preventDefault();
+const validateForm = async (event, signupForm) => {
+    event.preventDefault();
 
-        // Extraer datos del formulario
-        const email = sigupForm.querySelector('#email');
-        const password = sigupForm.querySelector('#password');
-        const passwordConfirmation = sigupForm.querySelector('#password-confirmation');
-        
-        if (isFormValid(email, password, passwordConfirmation)) {
-            createUser(email, password)
+    // Extraer datos del formulario
+    const email = sigupForm.querySelector('#email');
+    const password = sigupForm.querySelector('#password');
+    const passwordConfirmation = sigupForm.querySelector('#password-confirmation');
+    
+    if (isFormValid(email, password, passwordConfirmation)) {
+        try {
+            await createUser(email.value, password.value)
+            alert('usuario creado correctamente')
+        } catch (error) {
+            alert(error)
         }
-    })
+    }
 }
 
 const isFormValid = (email, password, passwordConfirmation) => {
