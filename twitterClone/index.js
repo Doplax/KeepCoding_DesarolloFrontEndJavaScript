@@ -10,7 +10,6 @@ const { showLoader, hideLoader } = loaderController(loader)
 
 document.addEventListener('DOMContentLoaded', () => {
     const tweetList = document.getElementById('tweets')
-    tweetListController(tweetList)
 
     tweetList.addEventListener('tweetsLoaded', (event) => {
         showNotifications(event.detail.message, event.detail.type);
@@ -23,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tweetList.addEventListener('finishLoadingTweets', (event) => {
         hideLoader()
     })
+    
+    tweetListController(tweetList)
 
     const session = document.getElementById('session')
     sessionController(session)
