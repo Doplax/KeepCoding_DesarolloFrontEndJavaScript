@@ -1,5 +1,5 @@
 import { getTweets } from "./tweetListModel";
-//import
+
 
 
 export const tweetListController = async (tweetList) => {
