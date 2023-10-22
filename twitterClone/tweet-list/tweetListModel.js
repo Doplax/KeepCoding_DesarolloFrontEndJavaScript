@@ -11,7 +11,7 @@ const transformTweets = (tweets) => {
 }
 
 export const getTweets = async () => {
-    const url = "https://localhost:8000/api "
+    const url = "https://localhost:8000/api"
     let parsedTweets = [];
     // Async Await
 
