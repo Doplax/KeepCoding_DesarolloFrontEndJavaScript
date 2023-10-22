@@ -15,7 +15,7 @@ export const createUser = async (email, password) => {
             body: JSON.stringify(body),
             headers: {
                 'Content-Type': 'application/json',
-                
+
             }
         })
 
@@ -25,7 +25,11 @@ export const createUser = async (email, password) => {
         }
 
     } catch (error) {
-        throw error
+        if(error.message) {
+            throw error.message
+        } else {
+            throw error
+        }
     }
 
 }

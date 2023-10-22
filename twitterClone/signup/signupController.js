@@ -15,9 +15,21 @@ const validateForm = async (event, signupForm) => {
     if (isFormValid(email, password, passwordConfirmation)) {
         try {
             await createUser(email.value, password.value)
-            alert('usuario creado correctamente')
+            const event = new CustomEvent('userCreated', {
+                detail: {
+                    type: 'success',
+                    message: 'Usuario creado correctamente'
+                }
+            })
+        signupForm.dispatchEvent(event)
         } catch (error) {
-            alert(error)
+            const event = new CustomEvent('userCreated', {
+                detail: {
+                    type: 'error',
+                    message: error,
+                }
+            })
+        signupForm.dispatchEvent(event)
         }
     }
 }
