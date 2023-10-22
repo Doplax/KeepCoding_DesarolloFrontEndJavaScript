@@ -12,25 +12,26 @@ const validateForm = async (event, signupForm) => {
     const password = sigupForm.querySelector('#password');
     const passwordConfirmation = sigupForm.querySelector('#password-confirmation');
     
-    if (isFormValid(email, password, passwordConfirmation)) {
         try {
-            await createUser(email.value, password.value)
+            if (isFormValid(email, password, passwordConfirmation)) {
 
-            dispatchEvent('userCreated', {
-                type: 'success',
-                message: 'Usuario creado correctamente'
-            }, signupForm)
+                await createUser(email.value, password.value)
+
+                dispatchEvent('userCreated', {
+                    type: 'success',
+                    message: 'Usuario creado correctamente'
+                }, signupForm)
             
-        signupForm.dispatchEvent(event)
+            }
         } catch (error) {
             dispatchEvent('userCreated', {
                 type: 'error',
                 message: error,
             }, signupForm)
-            
+
         }
     }
-}
+
 
 const isFormValid = (email, password, passwordConfirmation) => {
     const emailValidation =  isEmailValid(email);
@@ -45,7 +46,7 @@ const isEmailValid = (email) => {
     let result = true
 
     if (emailReRegExp.test(email)) {
-        alert('El email no es correcto');
+        throw 'El email no es correcto';
         result = false;
     }
     return result
@@ -55,7 +56,7 @@ const isPasswordValid = (password, passwordConfirmation) => {
     let result = true;
 
     if (password.value !== passwordConfirmation.value) {
-        alert('las contraseñas no son iguales');
+        throw 'las contraseñas no son iguales';
         result = false;
     }   
     return result;
