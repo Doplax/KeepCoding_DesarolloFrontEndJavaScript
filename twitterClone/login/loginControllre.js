@@ -20,7 +20,7 @@ const submitLogin = async (loginForm) => {
         alert('Login Ok')
 
         localStorage.setItem('token', jwt); // Guardamos el token en el navegador
-
+        window.location = '../index.html'
     } catch (error) {
         alert(error)
     }
