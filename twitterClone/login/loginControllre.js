@@ -1,5 +1,5 @@
 import { loginUser } from "./loginModel"
-
+import { dispatchEvent } from "../utils/dispatchEvent";
 export const loginController = async (loginForm) => {
 
     loginForm.addEventListener('submit', (event) => {
@@ -16,13 +16,15 @@ const submitLogin = async (loginForm) => {
 
     // Login contra sparrest
     try {
+        dispatchEvent('startLogin', null , loginForm)
         const jwt = await loginUser(email, password)
         alert('Login Ok')
-
         localStorage.setItem('token', jwt); // Guardamos el token en el navegador
         window.location = '../index.html'
     } catch (error) {
         alert(error)
+    } finally {
+        dispatchEvent('finishLogin', null, loginForm)
     }
 }
 
