@@ -7,6 +7,7 @@ const transformTweets = (tweets) => {
         message:tweet.message,
         likes: tweet.likes.lenght,
         image: tweet.image,
+        id: tweet.id,
     }))
 }
 
