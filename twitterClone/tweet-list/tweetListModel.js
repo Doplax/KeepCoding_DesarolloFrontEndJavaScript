@@ -2,17 +2,15 @@
 
 const transformTweets = (tweets) => {
     return tweets.map(tweet => ({
-        handler: tweet.author,
+        handler: tweet.user,username,
         date: new Date().toISOString(),
         message:tweet.message,
-        likes: tweet.likes.lenght,
-        image: tweet.image,
         id: tweet.id,
     }))
 }
 
 export const getTweets = async () => {
-    const url = "https://localhost:8000/api"
+    const url = "https://localhost:8000/api/tweets?_expand=user"
     let parsedTweets = [];
     // Async Await
 
