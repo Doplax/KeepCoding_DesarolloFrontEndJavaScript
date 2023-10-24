@@ -10,7 +10,7 @@ export const sessionController = (nav) => {
             sessionController(nav) // Función recursiva
         });
     } else {
-        nav.innerHTML = buildUnauthorizedSession();        
+        nav.innerHTML = buildUnauthorizedSession();  
     }
 }
 

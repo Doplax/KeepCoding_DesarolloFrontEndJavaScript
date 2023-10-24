@@ -9,8 +9,11 @@ export const buildUnauthorizedSession = () => {
     `
 }
 
+
+
 export const buildAuthenticatedSession = () => {
     return `
+    <a href="./tweet-creation.html">Create tweet</a>
     <button>Logout</button>
     `
 }
