@@ -1,4 +1,4 @@
-const headerView = {
+export const headerView = {
   render(headerModel) {
     return `
       <header class="header">
@@ -12,4 +12,4 @@ const headerView = {
   }
 };
 
-export { headerView };
+

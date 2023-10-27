@@ -1,12 +1,12 @@
 import {Header} from "./headerModel.js";
 import {headerView} from "./headerView.js";
 
-const headerController = {
+export const headerController = {
     init() {
         // Datos para el modelo (podrían venir de una API, base de datos, etc.)
         const headerLinks = [
-            { name: "Home", url: "#" },
-            { name: "Products", url: "#products" },
+            { name: "Home", url: "../../index.html" },
+            { name: "Login", url: "#products" },
             { name: "Contact", url: "#contact" },
         ];
 
@@ -21,4 +21,3 @@ const headerController = {
     },
 };
 
-export { headerController };
