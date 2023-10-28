@@ -13,11 +13,12 @@ export const headerView = {
           md:py-0
           px-4
           text-lg text-gray-700
+          shadow-xl
           bg-white
         "
       >
        <div>
-          <a href="#">
+          <a href="/">
             <img src="/assets/images/nodepop-loog.webp" class="w-10" alt="logo nodepop">
           </a>
         </div>

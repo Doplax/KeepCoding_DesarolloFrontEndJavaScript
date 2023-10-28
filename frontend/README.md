@@ -10,8 +10,8 @@
 ### Ad Listing
 - [ x ] Create HTML structure for the ad listing
 - [ ] Display a loader while ads are being loaded
-- [ ] Fetch ads from the appropriate endpoint
-- [ ] Display the ads (image, name, description, price, buy/sell)
+- [ x ] Fetch ads from the appropriate endpoint
+- [ x ] Display the ads (image, name, description, price, buy/sell)
 - [ ] Implement UI states (empty, error, loading, success)
 - [ ] Navigate to ad details on clicking an ad
 - [ ] Show button for creating new ad if user is logged in

@@ -17,7 +17,9 @@ export const headerController = {
     const headerHTML = headerView.render(header);
 
     // Insertar el HTML en el DOM
-    document.querySelector("#header").innerHTML = headerHTML;
+
+    document.querySelector('body').insertAdjacentHTML('beforebegin', headerHTML);
+    
 
     const button = document.querySelector("#menu-button");
     const menu = document.querySelector("#menu");

@@ -17,9 +17,9 @@ const productCardView = {
           <div class="px-6 py-4 flex items-center">
             <span class="text-gray-700 font-bold text-xl">$${productCardModel.price}</span>
             
-            <button class="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="/pages/product-detail/?id=${productCardModel.id}" class="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               View Details
-            </button>
+            </a>
 
           </div>
         </div>
