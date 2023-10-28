@@ -4,6 +4,10 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
+section {
+    width: 100%;
+    height: 100%;
+}
 
 .backgroundColor-greenColor {
     background-color: #13c1ac;

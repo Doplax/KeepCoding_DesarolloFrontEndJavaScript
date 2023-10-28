@@ -1,26 +1,20 @@
 // controllers/productDetailController.js
-import { ProductDetail } from '../models/productDetailModel.js';
-import { productDetailView } from '../views/productDetailView.js';
+import { productDetailModel } from './productDetailModel.js';
+import { productDetailView } from './productDetailView.js';
 
-const productDetailController = {
-  init() {
-    // Datos de ejemplo para el modelo
-    const exampleProductDetail = new ProductDetail(
-      1,
-      'Example Product',
-      'This is an example product',
-      99.99,
-      'https://example.com/image.jpg',
-      20,
-      'Electronics'
-    );
+export const productDetailController = {
+  async init($productDetail, productId) {
+    
 
-    // Renderizar la vista
-    const productDetailHTML = productDetailView.render(exampleProductDetail);
+    try {
+      const product = await productDetailModel.getProductDetail(productId)
+      $productDetail.innerHTML = productDetailView.render(product)
 
-    // Insertar el HTML en el DOM
-    document.querySelector("body").insertAdjacentHTML("beforeend", productDetailHTML);
+      
+    } catch (error) {
+      
+    }
   }
 };
 
-export { productDetailController };
+

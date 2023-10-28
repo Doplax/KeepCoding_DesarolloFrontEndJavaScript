@@ -13,13 +13,13 @@
 - [ x ] Fetch ads from the appropriate endpoint
 - [ x ] Display the ads (image, name, description, price, buy/sell)
 - [ ] Implement UI states (empty, error, loading, success)
-- [ ] Navigate to ad details on clicking an ad
+- [ x ] Navigate to ad details on clicking an ad
 - [ ] Show button for creating new ad if user is logged in
 
 ### Ad Details
-- [ ] Create HTML structure for ad details
+- [ x ] Create HTML structure for ad details
 - [ ] Implement UI states (empty, error, loading, success)
-- [ ] Fetch ad details from the backend
+- [ x ] Fetch ad details from the backend
 - [ ] Show delete button if the logged-in user owns the ad
 
 ### Create New Ad
@@ -28,7 +28,7 @@
 - [ ] Send form data to backend to save the new ad
 
 ### Login
-- [ ] Create HTML structure for login form
+- [ x ] Create HTML structure for login form
 - [ ] Implement UI states (loading, error, success)
 - [ ] Authenticate the user against the backend and store JWT token
 

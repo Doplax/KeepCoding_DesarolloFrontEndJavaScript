@@ -6,7 +6,7 @@ export const headerController = {
     // Datos para el modelo (podrían venir de una API, base de datos, etc.)
     const headerLinks = [
       { name: "Home", url: "/" },
-      { name: "Login", url: "/pages/sing-in" },
+      { name: "Sign-up", url: "/pages/sing-in" },
       { name: "Sign-up", url: "/pages/sing-up" },
     ];
 
