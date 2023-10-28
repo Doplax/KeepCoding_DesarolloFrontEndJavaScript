@@ -1,12 +1,12 @@
-class ProductCard {
-    constructor(id, name, description, price, imageUrl) {
-      this.id = id;
-      this.name = name;
-      this.description = description;
-      this.price = price;
-      this.imageUrl = imageUrl;
+export class ProductCardModel {
+    constructor(product) {
+      this.id = product.id;
+      this.name = product.name;
+      this.description = product.description;
+      this.price = product.price;
+      this.imageUrl = product.imageUrl;
     }
+    
   }
   
-  export { ProductCard };
   

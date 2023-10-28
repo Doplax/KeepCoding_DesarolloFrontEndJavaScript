@@ -1,9 +1,13 @@
 import { headerController } from './components/header/headerController.js'
-import { productCardController } from './components/productCard/productCardController.js'
+import { productListController } from './components/productList/productListController.js'
 
 document.addEventListener('DOMContentLoaded',() => {
     headerController.init()
-    productCardController.init()
+
+    const $productList = document.querySelector('#product-list') 
     
+    
+    
+    productListController.init($productList)
 })
 

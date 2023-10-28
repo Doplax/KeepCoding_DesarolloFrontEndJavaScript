@@ -8,7 +8,7 @@
 ## Frontend
 
 ### Ad Listing
-- [ ] Create HTML structure for the ad listing
+- [ x ] Create HTML structure for the ad listing
 - [ ] Display a loader while ads are being loaded
 - [ ] Fetch ads from the appropriate endpoint
 - [ ] Display the ads (image, name, description, price, buy/sell)
