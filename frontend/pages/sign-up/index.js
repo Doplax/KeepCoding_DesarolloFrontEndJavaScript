@@ -1,13 +1,13 @@
 import { headerController } from '../../components/header/headerController.js'
-//import { signUpController } from '../../components/singUp/signUpController.js'
+import { signUpController } from '../../components/singUp/signUpController.js'
 
 document.addEventListener('DOMContentLoaded',() => {
     headerController.init()
 
-    const $signUp = document.querySelector('#signUp') 
+    const $signUpForm = document.querySelector('#signUpForm') 
     
     
     
-    //signUpController.init($signUp)
+    signUpController.init($signUpForm)
 })
 
