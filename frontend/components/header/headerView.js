@@ -9,11 +9,11 @@ export const headerView = {
           items-center
           justify-between
           w-full
-          py-2
-          md:py-0
+          py-4
+          md:py-2
           px-4
           text-lg text-gray-700
-          shadow-xl
+          shadow-md
           bg-white
         "
       >
@@ -51,7 +51,7 @@ export const headerView = {
           ${links.map((element) => {
             return `
             <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href=${element.url}
+              <a class="flex justify-center md:p-4 py-2 font-bold hover:text-[#13c1ac]" href=${element.url}
                 >${element.name}</a
               >
             </li>`}).join('')}

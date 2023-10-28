@@ -1,3 +1,9 @@
+:root {
+    --wallapop-greenColor: #13c1ac;
+    --wallapop-darkerGreenColor: #11ae9c;
+
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +15,34 @@ section {
     height: 100%;
 }
 
-.backgroundColor-greenColor {
-    background-color: #13c1ac;
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* BACKGROUND COLOR */
+.bg-greenColor {
+    background-color: var(--wallapop-greenColor);
+}
+
+.bg-greenColor:hover {
+    background-color: var(--wallapop-darkerGreenColor);
+}
+
+/* TEXT COLOR */
+.text-greenColor{
+    color: var(--wallapop-greenColor);
+}
+
+.text-greenColor:hover {
+    color: var(--wallapop-darkerGreenColor);;
 }

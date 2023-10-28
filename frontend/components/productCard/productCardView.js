@@ -10,14 +10,10 @@ const productCardView = {
               ${productCardModel.description}
             </p>
           </div>
-          <div class="px-6 py-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#categoria1</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#categoria2</span>
-          </div>
           <div class="px-6 py-4 flex items-center">
             <span class="text-gray-700 font-bold text-xl">$${productCardModel.price}</span>
             
-            <a href="/pages/product-detail/?id=${productCardModel.id}" class="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="/pages/product-detail/?id=${productCardModel.id}" class="ml-auto bg-greenColor text-white font-bold py-2 px-4 rounded">
               View Details
             </a>
 
@@ -29,3 +25,11 @@ const productCardView = {
 };
 
 export { productCardView };
+
+
+{/*
+Categorias
+<div class="px-6 py-4">
+  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#categoria1</span>
+  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#categoria2</span>
+</div>*/}
