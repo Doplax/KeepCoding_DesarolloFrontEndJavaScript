@@ -1,19 +1,14 @@
 import { buildLoader} from './loaderView.js'
-export const loaderController = ($loader) => {
-    const showLoader = () => {
+export const loaderController = {
+    showLoader($loader){
         $loader.classList.add('active')
         $loader.innerHTML = buildLoader();
-    };
+    },
 
-    const hideLoader = () => {
+    hideLoader($loader){
         $loader.classList.remove ('active')
         $loader.innerHTML = '';
-    }
-
-    return {
-        showLoader,
-        hideLoader
-    }
+    },
 }
 
 

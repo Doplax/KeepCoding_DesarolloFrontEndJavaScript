@@ -35,7 +35,10 @@
 ### Registration
 - [ x ] Create HTML structure for registration form
 - [ ] Implement UI states (loading, error, success)
-- [ ] Register the user in the backend
+- [ x ] Register the user in the backend
+
+### Footer
+- [  ] Create HTML structure for footer
 
 ## Optional Features
 - [ ] Implement pagination for the ad listing

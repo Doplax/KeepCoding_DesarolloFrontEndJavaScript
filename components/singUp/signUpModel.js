@@ -12,7 +12,7 @@ export const signUpModel = {
     
     
         let response;
-        debugger
+        
         try {
             response = await fetch(url, {
                 method: 'POST',
