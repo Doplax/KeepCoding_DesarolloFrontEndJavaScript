@@ -7,7 +7,6 @@ export const productListModel = {
         try {
             const response = await fetch(url)
             parsedProducts = await response.json()
-            console.log(response);
 
         } catch (error) {
             return error

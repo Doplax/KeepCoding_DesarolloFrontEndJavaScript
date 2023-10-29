@@ -10,7 +10,6 @@ export const productListController = {
         let products = [];
         try {
             products = await productListModel.getProducts();
-            console.log(products);
 
 
         } catch (error) {

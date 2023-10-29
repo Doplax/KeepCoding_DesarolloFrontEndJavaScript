@@ -30,10 +30,10 @@
 ### Login
 - [ x ] Create HTML structure for login form
 - [ ] Implement UI states (loading, error, success)
-- [ ] Authenticate the user against the backend and store JWT token
+- [ x ] Authenticate the user against the backend and store JWT token
 
 ### Registration
-- [ ] Create HTML structure for registration form
+- [ x ] Create HTML structure for registration form
 - [ ] Implement UI states (loading, error, success)
 - [ ] Register the user in the backend
 
