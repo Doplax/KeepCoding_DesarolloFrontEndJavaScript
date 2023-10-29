@@ -1,12 +1,12 @@
 
 
 export const signUpModel = {
-    async createUser(email, password) {
+    async createUser(username, password) {
         
         const url = "http://localhost:8000/auth/register"
 
         const body = {
-            username: email, 
+            username: username, 
             password: password
         }
     

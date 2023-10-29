@@ -10,13 +10,13 @@ export const signUpController = {
         event.preventDefault();
         
         // Extraer datos del formulario
-        const email = $signUpForm.querySelector('#email');
+        const username = $signUpForm.querySelector('#username');
         const password = $signUpForm.querySelector('#password');
         const passwordConfirmation = $signUpForm.querySelector('#passwordConfirmation');
 
         try {
-            if (signUpController.isFormValid(email, password, passwordConfirmation)) {
-                await signUpModel.createUser(email.value, password.value);
+            if (signUpController.isFormValid(username, password, passwordConfirmation)) {
+                await signUpModel.createUser(username.value, password.value);
 
                 dispatchEvent('userCreated', {
                     type: 'success',
@@ -33,17 +33,17 @@ export const signUpController = {
         }
     },
 
-    isFormValid(email, password, passwordConfirmation) {
-        const emailValid = signUpController.isEmailValid(email);
+    isFormValid(username, password, passwordConfirmation) {
+        const usernameValid = signUpController.isusernameValid(username);
         const passwordValid = signUpController.isPasswordValid(password, passwordConfirmation);
 
-        return (emailValid && passwordValid);
+        return (usernameValid && passwordValid);
     },
 
-    isEmailValid(email) {
-        const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-        if (!emailRegExp.test(email.value)) {
-            throw 'El email no es correcto';
+    isusernameValid(username) {
+        const usernameRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        if (!usernameRegExp.test(username.value)) {
+            throw 'El username no es correcto';
         }
         return true;
     },

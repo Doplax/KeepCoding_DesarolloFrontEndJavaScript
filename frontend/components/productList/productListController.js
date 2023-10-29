@@ -7,7 +7,7 @@ export const productListController = {
         $productList.innerHTML = '';
         let productsHTML = '';
         let productListHTML = '';	
-        let products;
+        let products = [];
         try {
             products = await productListModel.getProducts();
             console.log(products);
