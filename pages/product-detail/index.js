@@ -1,5 +1,6 @@
 import { headerController } from '../../components/header/headerController.js'
 import { productDetailController } from '../../components/productDetail/productDetailController.js'
+import { signUpController } from '../../components/register/signUpController.js'
 
 
 document.addEventListener('DOMContentLoaded',() => {
@@ -10,6 +11,8 @@ document.addEventListener('DOMContentLoaded',() => {
 
     const $productDetail = document.querySelector('#productDetail');
     productDetailController.init($productDetail, productId)
+
+    signUpController.renderHeader()
 
 })
 

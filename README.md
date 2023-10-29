@@ -12,7 +12,7 @@
 - [ x ] Display a loader while ads are being loaded
 - [ x ] Fetch ads from the appropriate endpoint
 - [ x ] Display the ads (image, name, description, price, buy/sell)
-- [ ] Implement UI states (empty, error, loading, success)
+- [ x ] Implement UI states (empty, error, loading, success)
 - [ x ] Navigate to ad details on clicking an ad
 - [ ] Show button for creating new ad if user is logged in
 
@@ -29,12 +29,12 @@
 
 ### Login
 - [ x ] Create HTML structure for login form
-- [ ] Implement UI states (loading, error, success)
+- [ x ] Implement UI states (loading, error, success)
 - [ x ] Authenticate the user against the backend and store JWT token
 
 ### Registration
 - [ x ] Create HTML structure for registration form
-- [ ] Implement UI states (loading, error, success)
+- [ x ] Implement UI states (loading, error, success)
 - [ x ] Register the user in the backend
 
 ### Footer

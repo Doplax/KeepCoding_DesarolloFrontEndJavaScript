@@ -1,7 +1,7 @@
 import { headerController } from './components/header/headerController.js'
 import { productListController } from './components/productList/productListController.js' 
 
-//import { sessionController } from './components/sesion/sessionController.js'
+import { sessionController } from './utils/sessionController.js'
 import { loaderController } from './components/loader/loaderController.js'
 import { notificationsController } from './components/notifications/notificationsController.js'
 
@@ -14,7 +14,8 @@ const $productList = document.querySelector('#product-list')
 
 document.addEventListener('DOMContentLoaded',() => {
     //Layout
-    headerController.init()
+    sessionController.renderHeader();
+
 
     //Notifications
     $productList.addEventListener('startLoadingProducts',(event) => {
@@ -37,8 +38,6 @@ document.addEventListener('DOMContentLoaded',() => {
 
     productListController.init($productList)
 
-    //const session = document.getElementById('session');
-    //sessionController(session);
 })
 
 

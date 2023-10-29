@@ -25,18 +25,17 @@ export const loginController = {
     async submitLogin($loginForm) {
         let { username, password } = await loginController.getLoginData($loginForm);
         try {
-            dispatchEvent("LoginUser", {message: 'Login successfully', type: 'success'}, $loginForm);
             const jwt = await loginModel.loginUser(username, password);
             localStorage.setItem("token", jwt);
-            
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            window.location = "/";
 
         } catch (error) {
             dispatchEvent("LoginUser", {message: 'Login unsuccessfully', type: 'error'}, $loginForm);
             console.log(err);
+
         } finally {
-            dispatchEvent("finishLoginUser", null, $loginForm);
+            dispatchEvent("LoginUser", {message: 'Login successfully', type: 'success'}, $loginForm);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            window.location = "/";
         }
     },
 };

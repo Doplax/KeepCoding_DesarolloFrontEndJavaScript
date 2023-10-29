@@ -1,31 +1,38 @@
-import { Header } from "./headerModel.js";
+import { HeaderModel } from "./headerModel.js";
 import { headerView } from "./headerView.js";
 
 export const headerController = {
   init() {
-    // Datos para el modelo (podrían venir de una API, base de datos, etc.)
-    const headerLinks = [
-      { name: "Home", url: "/" },
-      { name: "Login", url: "/pages/login" },
-      { name: "Register", url: "/pages/register" },
-    ];
+    const headerLinks = HeaderModel.getLinks();
+    const headerHTML = headerView.render(headerLinks);
 
-    // Crear una nueva instancia del modelo
-    const header = new Header("Wallapop Clone", headerLinks);
+    // Insert HTML
+    document.querySelector('body').insertAdjacentHTML('afterbegin', headerHTML);
+    
+    headerController.toggleMenubutton()
+  },
 
-    // Renderizar la vista
-    const headerHTML = headerView.render(header);
+  logedHeader() {
+    const headerLinks = HeaderModel.getLogedLinks();
+    const headerHTML = headerView.render(headerLinks);
 
-    // Insertar el HTML en el DOM
-
+    // Insert HTML
     document.querySelector('body').insertAdjacentHTML('beforebegin', headerHTML);
     
 
-    const button = document.querySelector("#menu-button");
+    headerController.toggleMenubutton()
+
+  },
+
+
+  toggleMenubutton(){
+    const menubutton = document.querySelector("#menu-button");
     const menu = document.querySelector("#menu");
 
-    button.addEventListener("click", () => {
+    menubutton.addEventListener("click", () => {
       menu.classList.toggle("hidden");
-    });
-  },
+    })
+  }
+
+
 };

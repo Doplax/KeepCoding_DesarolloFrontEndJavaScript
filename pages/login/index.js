@@ -1,9 +1,9 @@
-import { headerController } from '../../components/header/headerController.js'
+import { sessionController } from '../../utils/sessionController.js'
 import { loginController } from '../../components/login/loginController.js'
 import { notificationsController } from '../../components/notifications/notificationsController.js'
 
 document.addEventListener('DOMContentLoaded',() => {
-    headerController.init()
+    sessionController.renderHeader()
 
     const $notifications = document.querySelector('#notifications');
     const $signInForm = document.querySelector('#signInForm')
