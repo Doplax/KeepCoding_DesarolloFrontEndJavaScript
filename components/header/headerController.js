@@ -6,8 +6,8 @@ export const headerController = {
     // Datos para el modelo (podrían venir de una API, base de datos, etc.)
     const headerLinks = [
       { name: "Home", url: "/" },
-      { name: "Sign-In", url: "/pages/sign-in" },
-      { name: "Sign-up", url: "/pages/sign-up" },
+      { name: "Login", url: "/pages/login" },
+      { name: "Register", url: "/pages/register" },
     ];
 
     // Crear una nueva instancia del modelo

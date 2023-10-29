@@ -13,23 +13,24 @@ export const signUpController = {
         const username = $signUpForm.querySelector('#username');
         const password = $signUpForm.querySelector('#password');
         const passwordConfirmation = $signUpForm.querySelector('#passwordConfirmation');
-
+        
         try {
             if (signUpController.isFormValid(username, password, passwordConfirmation)) {
                 await signUpModel.createUser(username.value, password.value);
 
                 dispatchEvent('userCreated', {
                     type: 'success',
-                    message: 'Usuario creado correctamente'
+                    message: 'User created successfully'
                 }, $signUpForm);
-
-                window.location = '/pages/sign-in';
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                window.location = '/pages/login';
             }
         } catch (error) {
             dispatchEvent('userCreated', {
                 type: 'error',
                 message: error
             }, $signUpForm);
+
         }
     },
 

@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/styles/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Sign Up</title>
+  <title>Register</title>
 </head>
 <body>
   <main>
-    <h1>Sign Up</h1>
+    <h1>Register</h1>
+    <section id="notifications"></section>
     <section id="signUp">
       <div class="container mx-auto p-8 flex">
         <div class="max-w-md w-full mx-auto">
@@ -25,14 +26,14 @@
                         <div class="mb-5">
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-600">Password</label>
 
-                            <input type="text" id="password" name="password" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none" required value="pulgarsito" minlength="6">
+                            <input type="password" id="password" name="password" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none" required value="pulgarsito" minlength="6">
                         </div>
                         
                         <!-- Condirm Password -->
                         <div class="mb-5">
                           <label for="passwordConfirmation" class="block mb-2 text-sm font-medium text-gray-600">Confirm Password</label>
 
-                          <input type="text" id="passwordConfirmation" name="passwordConfirmation" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none" required value="pulgarsito" minlength="6">
+                          <input type="password" id="passwordConfirmation" name="passwordConfirmation" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none" required value="pulgarsito" minlength="6">
                       </div>
 
                         <button class="bg-greenColor w-full p-3 mt-4 text-white rounded shadow">Login</button>

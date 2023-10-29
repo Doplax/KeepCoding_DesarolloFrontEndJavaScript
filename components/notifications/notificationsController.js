@@ -6,6 +6,6 @@ export const notificationsController = {
     
     setTimeout(() => {
       $notifications.innerHTML = '';
-    }, 3000);
+    }, 2000);
   }
 };
