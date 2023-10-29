@@ -17,9 +17,11 @@ document.addEventListener('DOMContentLoaded',() => {
     headerController.init()
 
     //Notifications
+    $productList.addEventListener('startLoadingProducts',(event) => {
+        notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
+    })
+
     $productList.addEventListener('productsLoaded',(event) => {
-        console.log(event.detail.message);
-        console.log(event.detail.type);
         notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
     })
     

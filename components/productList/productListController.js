@@ -11,10 +11,12 @@ export const productListController = {
         let productListHTML = '';	
         let products = [];
 
-        try {
-            dispatchEvent('startLoadingProducts', "success" , $productList)
-            products = await productListModel.getProducts();
 
+        try {
+            dispatchEvent('startLoadingProducts', {message: 'Loading products', type: 'loading'} , $productList)
+            products = await productListModel.getProducts();
+            //Await 2 seconds to see the loader
+            await new Promise(resolve => setTimeout(resolve, 3000));
 
         } catch (error) {
             dispatchEvent('Error cargando tweets', 'error' , $productList)
@@ -34,7 +36,7 @@ export const productListController = {
             })
             productListHTML = productListView.render(productsHTML)
             
-            dispatchEvent('productsLoaded', {message: 'Tweets cargados correctamente', type: 'success'}, $productList)
+            dispatchEvent('productsLoaded', {message: 'Products loaded correctly', type: 'success'}, $productList)
             
         }
 

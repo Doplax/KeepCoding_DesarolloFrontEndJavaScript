@@ -9,7 +9,7 @@
 
 ### Ad Listing
 - [ x ] Create HTML structure for the ad listing
-- [ ] Display a loader while ads are being loaded
+- [ x ] Display a loader while ads are being loaded
 - [ x ] Fetch ads from the appropriate endpoint
 - [ x ] Display the ads (image, name, description, price, buy/sell)
 - [ ] Implement UI states (empty, error, loading, success)
@@ -40,9 +40,9 @@
 ### Footer
 - [  ] Create HTML structure for footer
 
-## Optional Features
+<!--## Optional Features
 - [ ] Implement pagination for the ad listing
 - [ ] Add search functionality in the ad listing
 - [ ] Allow editing an ad if the logged-in user owns the ad
 - [ ] Implement tag filtering for ads
-- [ ] Make tags dynamic
+- [ ] Make tags dynamic-->

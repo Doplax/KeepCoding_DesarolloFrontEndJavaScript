@@ -169,6 +169,10 @@ main h1 {
   text-align: center;
 }
 
+.notification.loading {
+  box-shadow: rgb(254, 205, 125) 0px 0px 15px 1px;
+}
+
 .notification.success {
   box-shadow: rgb(125, 254, 125) 0px 0px 15px 1px;
 }
