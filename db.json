@@ -1,0 +1,181 @@
+{
+  "users": [
+    {
+      "username": "user",
+      "password": "$2b$10$ewPVgmfitM.teZJhKgrLSOHY33U82J5JrHmL6tiRH7nyv2D2JIwf6",
+      "id": 1
+    },
+    {
+      "username": "amodeo",
+      "password": "$2b$10$sdUYEwUkiuiaXP6ELocEreamKw/TPy4NQyQz1svfsWQwDibXMjL42",
+      "id": 2
+    },
+    {
+      "username": "pulgarsito@gmail.com",
+      "password": "$2b$10$5UuT7QAbev94ineVlWsdPuz3U.Ige3DQgSkISw9BEa8ypHPFir7Va",
+      "id": 3
+    },
+    {
+      "username": "pulgarsito2@gmail.com",
+      "password": "$2b$10$5UuT7QAbev94ineVlWsdPuz3U.Ige3DQgSkISw9BEa8ypHPFir7Va",
+      "id": 4
+    },
+    {
+      "username": "pulgarsito3@gmail.com",
+      "password": "$2b$10$5UuT7QAbev94ineVlWsdPuz3U.Ige3DQgSkISw9BEa8ypHPFir7Va",
+      "id": 5
+    },
+    {
+      "username": "pulgarsito4@gmail.com",
+      "password": "$2b$10$tTQ3lfZ0D/mHV4axM9ouPuBZtb3rPu.aqgZf0BZL8Gb2MiMIcx4ZO",
+      "id": 6
+    },
+    {
+      "username": "pulgarsito5@gmail.com",
+      "password": "$2b$10$tTQ3lfZ0D/mHV4axM9ouPuBZtb3rPu.aqgZf0BZL8Gb2MiMIcx4ZO",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "description": "Bluetooth-enabled wireless headphones with noise-cancelling feature.",
+      "price": 89.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone Holder",
+      "description": "Adjustable smartphone holder suitable for all devices.",
+      "price": 19.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 3,
+      "name": "Portable Charger",
+      "description": "10,000mAh portable charger for fast, on-the-go charging.",
+      "price": 29.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 4,
+      "name": "Fitness Tracker",
+      "description": "Track your health and fitness with our advanced metrics.",
+      "price": 49.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 5,
+      "name": "Gaming Mouse",
+      "description": "RGB gaming mouse with high DPI sensitivity and ergonomic design.",
+      "price": 59.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 6,
+      "name": "Mechanical Keyboard",
+      "description": "Mechanical keyboard with tactile keys for professional use.",
+      "price": 99.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 7,
+      "name": "4K Monitor",
+      "description": "Ultra-HD 4K monitor for exceptional clarity and color.",
+      "price": 299.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 8,
+      "name": "WiFi Router",
+      "description": "High-speed WiFi router capable of handling multiple devices.",
+      "price": 79.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 9,
+      "name": "External SSD",
+      "description": "1TB external SSD for fast, reliable storage.",
+      "price": 119.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 10,
+      "name": "Bluetooth Speaker",
+      "description": "Waterproof Bluetooth speaker with high-quality sound.",
+      "price": 39.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 11,
+      "name": "Wireless Earbuds",
+      "description": "Compact and wireless earbuds with high-fidelity audio.",
+      "price": 69.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 12,
+      "name": "Smartwatch",
+      "description": "Smartwatch with GPS, heart rate monitor, and multiple sport modes.",
+      "price": 199.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 13,
+      "name": "Laptop Stand",
+      "description": "Ergonomic laptop stand suitable for laptops up to 17 inches.",
+      "price": 34.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 14,
+      "name": "Webcam",
+      "description": "1080p HD webcam for video conferencing and streaming.",
+      "price": 49.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 15,
+      "name": "Digital Pen",
+      "description": "Pressure-sensitive digital pen for graphic design and art.",
+      "price": 79.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 16,
+      "name": "Desk Lamp",
+      "description": "LED desk lamp with adjustable brightness and color temperature.",
+      "price": 29.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 17,
+      "name": "USB Hub",
+      "description": "4-port USB 3.0 hub for expanding your computer's connectivity.",
+      "price": 24.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 18,
+      "name": "Noise-Canceling Microphone",
+      "description": "Studio-quality microphone with noise-canceling technology.",
+      "price": 109.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 19,
+      "name": "Gaming Chair",
+      "description": "Ergonomic gaming chair with lumbar support and recline feature.",
+      "price": 159.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    },
+    {
+      "id": 20,
+      "name": "HDMI Cable",
+      "description": "High-speed HDMI cable for 4K video and audio transfer.",
+      "price": 14.99,
+      "imageUrl": "http://localhost:5500/assets/images/default.png"
+    }
+  ]
+}
