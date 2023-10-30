@@ -17,9 +17,8 @@ export const productListController = {
             products = await productListModel.getProducts();
             //Await 2 seconds to see the loader
             await new Promise(resolve => setTimeout(resolve, 2000));
-
         } catch (error) {
-            dispatchEvent('Error cargando tweets', 'error' , $productList)
+            dispatchEvent('productsNotFound', {message: 'Error loading products', type: "error"} , $productList)
         } finally {
             dispatchEvent('finishLoadingProducts', null , $productList)
 

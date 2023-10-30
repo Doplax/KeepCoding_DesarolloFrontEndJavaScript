@@ -9,7 +9,7 @@ export const productListModel = {
             parsedProducts = await response.json()
 
         } catch (error) {
-            return error
+            throw error
         }
         return parsedProducts
 

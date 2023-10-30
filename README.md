@@ -14,7 +14,7 @@
 - [ x ] Display the ads (image, name, description, price, buy/sell)
 - [ x ] Implement UI states (empty, error, loading, success)
 - [ x ] Navigate to ad details on clicking an ad
-- [ ] Show button for creating new ad if user is logged in
+- [ x ] Show button for creating new ad if user is logged in
 
 ### Ad Details
 - [ x ] Create HTML structure for ad details

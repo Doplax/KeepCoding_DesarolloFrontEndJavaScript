@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded',() => {
     $productList.addEventListener('productsLoaded',(event) => {
         notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
     })
+
+    $productList.addEventListener('productsNotFound',(event) => {
+        notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
+    })
     
     //Loaders
     $productList.addEventListener('startLoadingProducts', () => {
