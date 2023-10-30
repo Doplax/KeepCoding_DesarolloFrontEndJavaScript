@@ -15,7 +15,7 @@ export const loginModel = {
                     'Content-type': 'application/json'
                 }
             });
-            debugger
+            
             const data = await response.json()
             
             

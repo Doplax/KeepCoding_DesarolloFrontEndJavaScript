@@ -5,7 +5,7 @@ export const loginController = {
     init($loginForm) {
         $loginForm.addEventListener("submit", (event) => {
             event.preventDefault();
-            debugger
+            
             loginController.submitLogin($loginForm);
         });
     },
