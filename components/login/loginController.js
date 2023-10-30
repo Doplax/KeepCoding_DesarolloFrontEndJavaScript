@@ -5,7 +5,7 @@ export const loginController = {
     init($loginForm) {
         $loginForm.addEventListener("submit", (event) => {
             event.preventDefault();
-
+            debugger
             loginController.submitLogin($loginForm);
         });
     },
@@ -27,13 +27,14 @@ export const loginController = {
         try {
             const jwt = await loginModel.loginUser(username, password);
             localStorage.setItem("token", jwt);
+            dispatchEvent("LoginUser", {message: 'Login successfully', type: 'success'}, $loginForm);
 
+            
         } catch (error) {
             dispatchEvent("LoginUser", {message: 'Login unsuccessfully', type: 'error'}, $loginForm);
-            console.log(err);
+            console.log(error);
 
         } finally {
-            dispatchEvent("LoginUser", {message: 'Login successfully', type: 'success'}, $loginForm);
             await new Promise(resolve => setTimeout(resolve, 1000));
             window.location = "/";
         }
