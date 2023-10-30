@@ -29,8 +29,9 @@ export const productListController = {
             // Load empty products
 
         } else {
-            
-            products.forEach((product) => {
+            const reversedProductsArray = [...products].reverse();
+
+            reversedProductsArray.forEach((product) => {
                 productsHTML += productCardController.init(product)
                 
             })

@@ -1,10 +1,8 @@
-import { headerController } from '../../components/header/headerController.js'
 import { productDetailController } from '../../components/productDetail/productDetailController.js'
-import { signUpController } from '../../components/register/signUpController.js'
+import { sessionController } from '../../utils/sessionController.js'
 
 
 document.addEventListener('DOMContentLoaded',() => {
-    headerController.init()
     
     const params = new URLSearchParams(window.location.search)
     const productId = params.get('id');
@@ -12,7 +10,7 @@ document.addEventListener('DOMContentLoaded',() => {
     const $productDetail = document.querySelector('#productDetail');
     productDetailController.init($productDetail, productId)
 
-    signUpController.renderHeader()
+    sessionController.renderHeader()
 
 })
 

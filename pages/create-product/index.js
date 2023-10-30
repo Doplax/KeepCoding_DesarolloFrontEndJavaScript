@@ -1,22 +1,22 @@
 import { sessionController } from '../../utils/sessionController.js'
-import { loginController } from '../../components/login/loginController.js'
+import { createProductController } from '../../components/createProduct/createProductController.js'
 import { notificationsController } from '../../components/notifications/notificationsController.js'
 
 document.addEventListener('DOMContentLoaded',() => {
     sessionController.renderHeader()
 
     const $notifications = document.querySelector('#notifications');
-    const $signInForm = document.querySelector('#signInForm')
+    const $createProductForm = document.querySelector('#createProductForm')
 
     //Notifications
-    $signInForm.addEventListener('LoginUser',(event) => {
+    $createProductForm.addEventListener('productCreated',(event) => {
         notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
     })
 
-    $signInForm.addEventListener('LoginUser',(event) => {
+    $createProductForm.addEventListener('productCreated',(event) => {
         notificationsController.showNotification($notifications, event.detail.message, event.detail.type)
     })
 
-    loginController.init($signInForm)
+    createProductController.init($createProductForm)
 })
 

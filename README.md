@@ -23,9 +23,9 @@
 - [ ] Show delete button if the logged-in user owns the ad
 
 ### Create New Ad
-- [ ] Create HTML structure for new ad form
-- [ ] Implement UI states (error, loading, success)
-- [ ] Send form data to backend to save the new ad
+- [ x ] Create HTML structure for new ad form
+- [ x ] Implement UI states (error, loading, success)
+- [ x ] Send form data to backend to save the new ad
 
 ### Login
 - [ x ] Create HTML structure for login form
