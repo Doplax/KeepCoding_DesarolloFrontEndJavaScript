@@ -21,7 +21,7 @@ export const sparrestApi = {
 
   delete: async function (endpoint) {
     const url = this.baseUrl + endpoint;
-    const token = sessionController.getItem("token");
+    const token = sessionController.getToken("token");
     try {
       const response = await fetch(url, {
         method: "DELETE",

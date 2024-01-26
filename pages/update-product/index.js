@@ -1,7 +1,10 @@
-import { signUpController } from "../../components/register/signUpController.js";
 import { notificationsController } from "../../components/notifications/notificationsController.js";
+import { LayoutController } from "../../components/layout/LayoutController.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
+  LayoutController.render();
+
   const $notifications = document.querySelector("#notifications");
   const $signUpForm = document.querySelector("#signUpForm");
 
@@ -22,5 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  signUpController.renderHeader();
+  
 });

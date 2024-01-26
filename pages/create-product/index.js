@@ -1,10 +1,10 @@
 import { sessionController } from "../../utils/sessionController.js";
 import { createProductController } from "../../components/createProduct/createProductController.js";
 import { notificationsController } from "../../components/notifications/notificationsController.js";
-import { headerController } from "../../components/header/headerController.js";
+import { LayoutController } from "../../components/layout/LayoutController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    headerController.init();
+  sessionController.protectRoute()
 
   const $notifications = document.querySelector("#notifications");
   const $createProductForm = document.querySelector("#createProductForm");
@@ -26,5 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
+  LayoutController.render();
   createProductController.init($createProductForm);
 });

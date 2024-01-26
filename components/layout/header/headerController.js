@@ -41,7 +41,7 @@ export const headerController = {
     if (logoutButton) {
       logoutButton.addEventListener('click', () => {
         sessionController.removeToken('token')
-        this.render(); // Reinicia el header tras el cierre de sesión
+        window.location.href = '/';
       });
     }
   },

@@ -1,5 +1,5 @@
 import { productDetailController } from "../../components/productDetail/productDetailController.js";
-import { sessionController } from "../../utils/sessionController.js";
+import { LayoutController } from "../../components/layout/LayoutController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const $productDetail = document.querySelector("#productDetail");
   productDetailController.init($productDetail, productId);
 
-  sessionController.renderHeader();
+  LayoutController.render();
 });

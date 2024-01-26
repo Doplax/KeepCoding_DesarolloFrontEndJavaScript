@@ -11,7 +11,13 @@ export const sessionController = {
     localStorage.removeItem(token);
   },
 
-  getItem(token) {
-    localStorage.getItem(token);
+  getToken(token) {
+    return localStorage.getItem(token);
   },
+
+  protectRoute() {
+    if (!this.isUserLoggedIn()) {
+      window.location.href = '/';
+    }
+  }
 };

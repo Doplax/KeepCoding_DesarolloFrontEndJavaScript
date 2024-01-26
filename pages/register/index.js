@@ -1,8 +1,10 @@
-import { sessionController } from "../../utils/sessionController.js";
 import { notificationsController } from "../../components/notifications/notificationsController.js";
 import { signUpController } from "../../components/register/signUpController.js";
+import { LayoutController } from "../../components/layout/LayoutController.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
+  LayoutController.render();
 
   const $notifications = document.querySelector("#notifications");
   const $signUpForm = document.querySelector("#signUpForm");

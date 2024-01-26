@@ -3,14 +3,11 @@ import { loaderController } from "./components/loader/loaderController.js";
 import { notificationsController } from "./components/notifications/notificationsController.js";
 import { LayoutController } from "/components/layout/LayoutController.js";
 
-//import { headerController } from "./components/layout/header/headerController.js";
-
 const $notifications = document.querySelector("#notifications");
 const $loader = document.querySelector("#loader");
 const $productList = document.querySelector("#product-list");
 
 document.addEventListener("DOMContentLoaded", () => {
-  LayoutController.render()
 
   //Notifications
   $productList.addEventListener("startLoadingProducts", (event) => {
@@ -46,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           loaderController.hideLoader($loader);
         });
         
-        
+        LayoutController.render()
         productListController.init($productList);
       });
       
