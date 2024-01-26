@@ -40,7 +40,7 @@ export const headerController = {
     const logoutButton = document.querySelector('#navButton-logout');
     if (logoutButton) {
       logoutButton.addEventListener('click', () => {
-        localStorage.removeItem('token');
+        sessionController.removeToken('token')
         this.render(); // Reinicia el header tras el cierre de sesión
       });
     }

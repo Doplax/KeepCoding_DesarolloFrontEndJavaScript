@@ -1,3 +1,5 @@
+import { sessionController } from "../utils/sessionController";
+
 export const sparrestApi = {
   baseUrl: "http://localhost:8000/",
 
@@ -19,7 +21,7 @@ export const sparrestApi = {
 
   delete: async function (endpoint) {
     const url = this.baseUrl + endpoint;
-    const token = localStorage.getItem("token");
+    const token = sessionController.getItem("token");
     try {
       const response = await fetch(url, {
         method: "DELETE",

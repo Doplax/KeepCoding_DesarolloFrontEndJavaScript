@@ -1,3 +1,5 @@
+import { sessionController } from "../../utils/sessionController";
+
 export const createProductModel = {
   async createProduct(productData) {
     const url = "http://localhost:8000/api/products"; // Cambia la URL según tu API
@@ -20,7 +22,7 @@ export const createProductModel = {
         body: JSON.stringify(body),
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // suponiendo que el token está almacenado en el localStorage
+          Authorization: `Bearer ${sessionController.getItem("token")}`, // suponiendo que el token está almacenado en el localStorage
         },
       });
 

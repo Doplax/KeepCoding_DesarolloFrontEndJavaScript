@@ -1,29 +1,20 @@
-import { headerController } from "../components/header/headerController.js";
 export const sessionController = {
     
     isUserLoggedIn(){
         return localStorage.getItem('token') 
     },
 
-    renderHeader(){
-        if (this.isUserLoggedIn()) {
-            const header = document.querySelector('header');
-            if (header) {
-                header.remove();
-            }
-
-            headerController.logedHeader();
-            
-           ;
-        }  else {
-            const header = document.querySelector('header');
-            if (header) {
-                header.remove();
-            }
-
-            headerController.init()
-        }
+    setToken(jwt){
+      localStorage.setItem("token", jwt);
     },
+
+    removeToken(token){
+      localStorage.removeItem(token);
+    },
+
+    getItem(token){
+      localStorage.getItem(token)
+    }
 
 
 }

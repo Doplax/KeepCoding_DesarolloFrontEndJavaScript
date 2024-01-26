@@ -1,5 +1,6 @@
 import { dispatchEvent } from "../../utils/dispatchEvent.js";
 import { loginModel } from "./loginModel.js";
+import { sessionController } from "../../utils/sessionController.js";
 
 export const loginController = {
   init($loginForm) {
@@ -25,7 +26,7 @@ export const loginController = {
     let { username, password } = await loginController.getLoginData($loginForm);
     try {
       const jwt = await loginModel.loginUser(username, password);
-      localStorage.setItem("token", jwt);
+      sessionController.setToken(jwt)
       dispatchEvent(
         "LoginUser",
         { message: "Login successfully", type: "success" },
