@@ -1,6 +1,6 @@
 import { HeaderModel } from "./headerModel.js";
 import { headerView } from "./headerView.js";
-import { sessionController } from "../../utils/sessionController.js";
+import { sessionController } from "../../../utils/sessionController.js";
 
 export const headerController = {
   render() {
