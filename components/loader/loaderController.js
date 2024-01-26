@@ -1,14 +1,12 @@
-import { buildLoader} from './loaderView.js'
+import { buildLoader } from "./loaderView.js";
 export const loaderController = {
-    showLoader($loader){
-        $loader.classList.add('active')
-        $loader.innerHTML = buildLoader();
-    },
+  showLoader($loader) {
+    $loader.classList.add("active");
+    $loader.innerHTML = buildLoader();
+  },
 
-    hideLoader($loader){
-        $loader.classList.remove ('active')
-        $loader.innerHTML = '';
-    },
-}
-
-
+  hideLoader($loader) {
+    $loader.classList.remove("active");
+    $loader.innerHTML = "";
+  },
+};

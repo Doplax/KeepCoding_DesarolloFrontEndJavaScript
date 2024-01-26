@@ -1,7 +1,7 @@
 export const footer = {
-    render(footerModel){
-        return `
+  render(footerModel) {
+    return `
         
-        `
-    }
-}
+        `;
+  },
+};

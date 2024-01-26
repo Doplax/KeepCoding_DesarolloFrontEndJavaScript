@@ -1,5 +1,5 @@
 export const buildLoader = () => {
-    return `
+  return `
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    `
-}
+    `;
+};

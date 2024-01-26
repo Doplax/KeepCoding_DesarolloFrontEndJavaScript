@@ -1,7 +1,6 @@
-
 export const productDetailView = {
-    render(product) {
-      return `
+  render(product) {
+    return `
       <div class=" rounded-lg overflow-hidden p-6">
         <div class="container px-5 py-24 mx-auto" style="cursor: auto">
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -82,7 +81,9 @@ export const productDetailView = {
                   </p>
                   <div class="flex sm:my-20 items-center pb-5 border-b-2 border-gray-100 mb-5"></div>
                   <div class="flex">
-                      <span class="title-font font-medium text-2xl text-gray-900">${product.price.toFixed(2)}$
+                      <span class="title-font font-medium text-2xl text-gray-900">${product.price.toFixed(
+                        2
+                      )}$
                       </span>
                       <button
                           class="flex ml-auto text-white bg-greenColor font-bold border-0 py-2 px-6 focus:outline-none rounded">
@@ -94,6 +95,5 @@ export const productDetailView = {
       </div>
   </div>
       `;
-    }
-  };
-  
+  },
+};

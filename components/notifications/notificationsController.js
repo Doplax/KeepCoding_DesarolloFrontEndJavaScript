@@ -1,11 +1,14 @@
-import { notificationsView } from './notificationsView.js';
+import { notificationsView } from "./notificationsView.js";
 
 export const notificationsController = {
   showNotification: ($notifications, message, type) => {
-    $notifications.innerHTML = notificationsView.buildNotification(message, type);
-    
+    $notifications.innerHTML = notificationsView.buildNotification(
+      message,
+      type
+    );
+
     setTimeout(() => {
-      $notifications.innerHTML = '';
+      $notifications.innerHTML = "";
     }, 2000);
-  }
+  },
 };

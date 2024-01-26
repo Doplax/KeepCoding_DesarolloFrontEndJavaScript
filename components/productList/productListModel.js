@@ -1,18 +1,14 @@
-
 export const productListModel = {
-    async getProducts() {
-        const url = "http://localhost:8000/api/products"
-        let parsedProducts = []
+  async getProducts() {
+    const url = "http://localhost:8000/api/products";
+    let parsedProducts = [];
 
-        try {
-            const response = await fetch(url)
-            parsedProducts = await response.json()
-
-        } catch (error) {
-            throw error
-        }
-        return parsedProducts
-
+    try {
+      const response = await fetch(url);
+      parsedProducts = await response.json();
+    } catch (error) {
+      throw error;
     }
-
-}
+    return parsedProducts;
+  },
+};

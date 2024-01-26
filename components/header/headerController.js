@@ -7,9 +7,9 @@ export const headerController = {
     const headerHTML = headerView.render(headerLinks);
 
     // Insert HTML
-    document.querySelector('body').insertAdjacentHTML('afterbegin', headerHTML);
-    
-    headerController.toggleMenubutton()
+    document.querySelector("body").insertAdjacentHTML("afterbegin", headerHTML);
+
+    headerController.toggleMenubutton();
   },
 
   logedHeader() {
@@ -17,22 +17,18 @@ export const headerController = {
     const headerHTML = headerView.render(headerLinks);
 
     // Insert HTML
-    document.querySelector('body').insertAdjacentHTML('beforebegin', headerHTML);
-    
-
-    headerController.toggleMenubutton()
-
+    document
+      .querySelector("body")
+      .insertAdjacentHTML("beforebegin", headerHTML);
+    headerController.toggleMenubutton();
   },
 
-
-  toggleMenubutton(){
+  toggleMenubutton() {
     const menubutton = document.querySelector("#menu-button");
     const menu = document.querySelector("#menu");
 
     menubutton.addEventListener("click", () => {
       menu.classList.toggle("hidden");
-    })
-  }
-
-
+    });
+  },
 };

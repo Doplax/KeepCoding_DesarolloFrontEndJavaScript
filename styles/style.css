@@ -162,8 +162,6 @@ main h1 {
   justify-content: center;
   align-items: center;
   animation: fadeInOut 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-
-
 }
 .notification p {
   text-align: center;
@@ -186,7 +184,8 @@ main h1 {
     opacity: 0;
     transform: translateY(-30px);
   }
-  10%, 90% {
+  10%,
+  90% {
     opacity: 1;
     transform: translateY(0);
   }

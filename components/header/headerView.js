@@ -1,8 +1,5 @@
 export const headerView = {
   render(headerLinks) {
-    
-    
-
     return `
     <header>
       <nav 
@@ -50,20 +47,21 @@ export const headerView = {
                 md:justify-between 
                 md:pt-0"
             >
-            ${headerLinks.map((element) => {
-              return `
+            ${headerLinks
+              .map((element) => {
+                return `
               <li id="navButton-${element.id}">
                 <a class="flex justify-center md:p-4 py-2 font-bold hover:text-[#13c1ac]" href=${element.url}
                   >${element.name}</a
                 >
-              </li>`}).join('')}
+              </li>`;
+              })
+              .join("")}
             </ul>
           </div>
       </nav>
     </header>
       
     `;
-  }
+  },
 };
-
-
