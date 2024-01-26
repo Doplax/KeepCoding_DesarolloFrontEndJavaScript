@@ -3,7 +3,6 @@ import { loginController } from "../../components/login/loginController.js";
 import { notificationsController } from "../../components/notifications/notificationsController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  LayoutController.render();
 
   const $notifications = document.querySelector("#notifications");
   const $signInForm = document.querySelector("#signInForm");
@@ -25,5 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
+  LayoutController.render();
   loginController.init($signInForm);
 });
