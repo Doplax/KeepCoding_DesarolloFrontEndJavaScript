@@ -1,34 +1,48 @@
 import { HeaderModel } from "./headerModel.js";
 import { headerView } from "./headerView.js";
+import { sessionController } from "../../utils/sessionController.js";
 
 export const headerController = {
-  init() {
-    const headerLinks = HeaderModel.getLinks();
+  render() {
+    this.removeExistingHeader();
+    const headerLinks = this.getHeaderLinksBasedOnLoginStatus();
     const headerHTML = headerView.render(headerLinks);
-
-    // Insert HTML
+    
     document.querySelector("body").insertAdjacentHTML("afterbegin", headerHTML);
-
-    headerController.toggleMenubutton();
+    
+    this.toggleMenuVisibility();
+    this.initializeLogoutButtonEventHandler();
   },
 
-  logedHeader() {
-    const headerLinks = HeaderModel.getLogedLinks();
-    const headerHTML = headerView.render(headerLinks);
-
-    // Insert HTML
-    document
-      .querySelector("body")
-      .insertAdjacentHTML("beforebegin", headerHTML);
-    headerController.toggleMenubutton();
-  },
-
-  toggleMenubutton() {
-    const menubutton = document.querySelector("#menu-button");
+  toggleMenuVisibility() {
+    const menuButton = document.querySelector("#menu-button");
     const menu = document.querySelector("#menu");
 
-    menubutton.addEventListener("click", () => {
+    menuButton.addEventListener("click", () => {
       menu.classList.toggle("hidden");
     });
+  },
+
+  getHeaderLinksBasedOnLoginStatus() {
+    return sessionController.isUserLoggedIn()
+      ? HeaderModel.getLogedLinks() // Enlaces para usuarios logueados
+      : HeaderModel.getLinks();      // Enlaces para usuarios no logueados
+  },
+
+  removeExistingHeader() {
+    const existingHeader = document.querySelector("header");
+    if (existingHeader) {
+      existingHeader.remove();
+    }
+  },
+
+  initializeLogoutButtonEventHandler() {
+    const logoutButton = document.querySelector('#navButton-logout');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('token');
+        this.render(); // Reinicia el header tras el cierre de sesión
+      });
+    }
   },
 };
