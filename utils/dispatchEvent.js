@@ -1,3 +1,5 @@
+// El elemento que recive es el mismo que tiene que escuchar el evento
+
 export const dispatchEvent = (eventName, data, $element) => {
   let eventData;
 
@@ -10,6 +12,6 @@ export const dispatchEvent = (eventName, data, $element) => {
   const event = new CustomEvent(eventName, {
     detail: eventData,
   });
-
+  
   $element.dispatchEvent(event);
 };

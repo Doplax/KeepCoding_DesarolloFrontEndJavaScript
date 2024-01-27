@@ -18,13 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  $signUpForm.addEventListener("userCreated", (event) => {
-    notificationsController.showNotification(
-      $notifications,
-      event.detail.message,
-      event.detail.type
-    );
-  });
 
   signUpController.init($signUpForm);
 });

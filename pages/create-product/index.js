@@ -18,14 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  $createProductForm.addEventListener("productCreated", (event) => {
-    notificationsController.showNotification(
-      $notifications,
-      event.detail.message,
-      event.detail.type
-    );
-  });
-
   LayoutController.render();
   createProductController.init($createProductForm);
 });

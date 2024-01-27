@@ -1,6 +1,8 @@
 import { productDetailModel } from "./productDetailModel.js";
 import { productDetailView } from "./productDetailView.js";
 import { sessionController } from "../../utils/sessionController.js";
+import { dispatchEvent } from "../../utils/dispatchEvent.js";
+
 
 export const productDetailController = {
   async init($productDetail, productId) {
@@ -8,13 +10,12 @@ export const productDetailController = {
       const product = await productDetailModel.getProductDetail(productId);
 
       const isOwnerProduct = await this.isOwner(product.userId);
-      debugger
       $productDetail.innerHTML = productDetailView.render(
         product,
         isOwnerProduct
       );
       if (isOwnerProduct) {
-        this.deleteButton(productId);
+        this.deleteButton($productDetail, productId);
       }
     } catch (error) {}
   },
@@ -52,8 +53,8 @@ export const productDetailController = {
     return currentUserData ? currentUserData.id : null; // Devuelve el ID del usuario actual o null si no se encuentra
   },
 
-  deleteButton(productId) {
-    debugger;
+  deleteButton($productDetail,productId) {
+
     const deleteButton = document.querySelector("#delete-button"); // Asegúrate de que el botón tenga este ID
     deleteButton.addEventListener("click", async () => {
       const token = sessionController.getToken(); // Obtiene el token
@@ -72,14 +73,19 @@ export const productDetailController = {
             },
           }
         );
-
+        
         if (!response.ok) {
           throw new Error(`Server responded with status: ${response.status}`);
         }
-
-        // Aquí puedes manejar la respuesta. Por ejemplo, podrías redirigir al usuario o actualizar la UI.
-        console.log("Product successfully deleted");
-        // Por ejemplo: window.location.href = '/products';
+        
+        dispatchEvent(
+          "productDeleted",
+          { message: "Product deleted successfully", type: "success" },
+          $productDetail
+        );  
+              
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        window.location = "/";
       } catch (error) {
         console.error("Error deleting product:", error);
       }

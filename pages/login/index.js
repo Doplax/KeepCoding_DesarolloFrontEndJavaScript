@@ -16,13 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  $signInForm.addEventListener("LoginUser", (event) => {
-    notificationsController.showNotification(
-      $notifications,
-      event.detail.message,
-      event.detail.type
-    );
-  });
 
   LayoutController.render();
   loginController.init($signInForm);
