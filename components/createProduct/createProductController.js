@@ -31,9 +31,7 @@ export const createProductController = {
   },
 
   async submitCreateProduct($createForm) {
-    const productData =
-      createProductController.getCreateProductData($createForm);
-
+    const productData =createProductController.getCreateProductData($createForm);
     try {
       const product = await createProductModel.createProduct(productData);
       dispatchEvent(

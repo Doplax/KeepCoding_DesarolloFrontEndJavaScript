@@ -1,18 +1,39 @@
+const USER_DATA = "userData"
+
 export const sessionController = {
-  isUserLoggedIn() {
-    return localStorage.getItem("token");
+
+  isUserLoggedIn() {  
+    return localStorage.getItem(USER_DATA);
   },
 
-  setToken(jwt) {
-    localStorage.setItem("token", jwt);
+  setToken(tokenData) {
+    localStorage.setItem(USER_DATA, JSON.stringify(tokenData)); 
   },
 
-  removeToken(token) {
-    localStorage.removeItem(token);
+  removeToken() {
+    localStorage.removeItem(USER_DATA);
   },
 
-  getToken(token) {
-    return localStorage.getItem(token);
+  getToken() {
+    try {
+      const tokenData = localStorage.getItem(USER_DATA);
+      const { jwt } = JSON.parse(tokenData);
+      return jwt;
+    } catch (error) {
+      console.error('Error al obtener el token:', error);
+      return null;
+    }
+  },
+
+  getUser() {
+    try {
+      const tokenData = localStorage.getItem(USER_DATA);
+      const { username } = JSON.parse(tokenData);
+      return username;
+    } catch (error) {
+      console.error('Error al obtener el usuario:', error);
+      return undefined;
+    }
   },
 
   protectRoute() {

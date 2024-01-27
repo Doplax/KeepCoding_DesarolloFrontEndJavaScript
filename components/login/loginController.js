@@ -26,12 +26,19 @@ export const loginController = {
     let { username, password } = await loginController.getLoginData($loginForm);
     try {
       const jwt = await loginModel.loginUser(username, password);
-      sessionController.setToken(jwt)
+      const tokenData = {
+        jwt,
+        username
+      }
+      sessionController.setToken(tokenData)
       dispatchEvent(
         "LoginUser",
         { message: "Login successfully", type: "success" },
         $loginForm
       );
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      window.location = "/";
+
     } catch (error) {
       dispatchEvent(
         "LoginUser",
@@ -39,9 +46,6 @@ export const loginController = {
         $loginForm
       );
       console.log(error);
-    } finally {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      window.location = "/";
-    }
+    } 
   },
 };

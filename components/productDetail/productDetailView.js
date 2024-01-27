@@ -1,5 +1,5 @@
 export const productDetailView = {
-  render(product) {
+  render(product,isOwner) {
     return `
       <div class=" rounded-lg overflow-hidden p-6">
         <div class="container px-5 py-24 mx-auto" style="cursor: auto">
@@ -85,10 +85,11 @@ export const productDetailView = {
                         2
                       )}$
                       </span>
-                      <button
-                          class="flex ml-auto text-white bg-greenColor font-bold border-0 py-2 px-6 focus:outline-none rounded">
-                          Buy
-                      </button>
+                      
+                      ${isOwner ? `
+                        <button id="delete-button" class="flex ml-auto text-white bg-red-600 font-bold border-0 py-2 px-6 focus:outline-none hover:bg-red-700 rounded">
+                          Delete
+                        </button>`: ''}
                   </div>
               </div>
           </div>
@@ -96,4 +97,5 @@ export const productDetailView = {
   </div>
       `;
   },
+
 };
