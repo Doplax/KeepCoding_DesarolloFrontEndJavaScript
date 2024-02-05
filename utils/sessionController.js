@@ -1,44 +1,40 @@
-const USER_DATA = "userData"
+const AUTH_TOKEN = "authToken";
+import { decodeToken } from "./decodeToken.js";
 
 export const sessionController = {
 
-  isUserLoggedIn() {  
-    return localStorage.getItem(USER_DATA);
+  isUserLoggedIn(token = AUTH_TOKEN) {
+    return localStorage.getItem(token);
   },
 
-  setToken(tokenData) {
-    localStorage.setItem(USER_DATA, JSON.stringify(tokenData)); 
+  setToken(jwt) {
+    localStorage.setItem(AUTH_TOKEN, jwt);
   },
 
-  removeToken() {
-    localStorage.removeItem(USER_DATA);
+  removeToken(token = AUTH_TOKEN) {
+    localStorage.removeItem(token);
   },
 
-  getToken() {
-    try {
-      const tokenData = localStorage.getItem(USER_DATA);
-      const { jwt } = JSON.parse(tokenData);
-      return jwt;
-    } catch (error) {
-      console.error('Error al obtener el token:', error);
-      return null;
-    }
+  getToken(token = AUTH_TOKEN) {
+    return localStorage.getItem(token);
   },
 
-  getUser() {
-    try {
-      const tokenData = localStorage.getItem(USER_DATA);
-      const { username } = JSON.parse(tokenData);
-      return username;
-    } catch (error) {
-      console.error('Error al obtener el usuario:', error);
+  getUserId() {
+    const token = this.getToken();
+    if (!token) return undefined;
+
+    const decodedToken = decodeToken(token);
+    if (!decodedToken) {
+      console.error('Error al decodificar el token');
       return undefined;
     }
+
+    return decodedToken.userId; 
   },
 
   protectRoute() {
     if (!this.isUserLoggedIn()) {
       window.location.href = '/';
     }
-  }
+  },
 };

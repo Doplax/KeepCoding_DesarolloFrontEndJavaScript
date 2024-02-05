@@ -36,7 +36,8 @@ export const loginController = {
         { message: "Login successfully", type: "success" },
         $loginForm
       );
-      await new Promise((resolve) => setTimeout(resolve, 700));
+      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       window.location = "/";
 
     } catch (error) {
@@ -46,6 +47,7 @@ export const loginController = {
         $loginForm
       );
       console.log(error);
-    } 
+    }
+
   },
 };
