@@ -31,11 +31,9 @@ export const createProductController = {
   },
 
   async submitCreateProduct($createForm) {
-    const productData =
-      createProductController.getCreateProductData($createForm);
-
     try {
-      const product = await createProductModel.createProduct(productData);
+      const productData = createProductController.getCreateProductData($createForm);
+      await createProductModel.createProduct(productData);
       dispatchEvent(
         "productCreated",
         { message: "Product created successfully", type: "success" },

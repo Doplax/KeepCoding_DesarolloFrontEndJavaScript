@@ -1,7 +1,6 @@
 import { ProductCardModel } from "../productCard/productCardModel.js";
 
 export const productDetailModel = {
-  // Heredamos de ProductCard para reutilizar atributos
   async getProductDetail(productId) {
     const url = `http://localhost:8000/api/products?id=${productId}`;
     let parsedProduct;
@@ -22,7 +21,18 @@ export const productDetailModel = {
     return parsedProduct;
   },
 
-  //async deleteProduct(productId) {
+  async deleteProduct(productId, token) {
+    const response = await fetch(`http://localhost:8000/api/products/${productId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-  //}
+    if (!response.ok) {
+      throw new Error(`Server responded with status: ${response.status}`);
+    }
+
+    return response; // La respuesta podría contener información relevante que el controlador podría necesitar
+  }
 };

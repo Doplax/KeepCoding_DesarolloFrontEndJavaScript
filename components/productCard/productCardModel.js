@@ -5,5 +5,6 @@ export class ProductCardModel {
     this.description = product.description;
     this.price = product.price;
     this.imageUrl = product.imageUrl;
+    this.userId = product.userId
   }
 }

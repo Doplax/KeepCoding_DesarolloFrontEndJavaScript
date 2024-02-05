@@ -40,7 +40,7 @@ export const headerController = {
     const logoutButton = document.querySelector('#navButton-logout');
     if (logoutButton) {
       logoutButton.addEventListener('click', () => {
-        sessionController.removeToken('token')
+        sessionController.removeToken()
         window.location.href = '/';
       });
     }
