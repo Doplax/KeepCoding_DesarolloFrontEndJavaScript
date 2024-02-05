@@ -77,17 +77,21 @@ export const productDetailController = {
         if (!response.ok) {
           throw new Error(`Server responded with status: ${response.status}`);
         }
-        
         dispatchEvent(
           "productDeleted",
           { message: "Product deleted successfully", type: "success" },
           $productDetail
-        );  
-              
+        );        
         await new Promise((resolve) => setTimeout(resolve, 1000));
         window.location = "/";
+
+
       } catch (error) {
-        console.error("Error deleting product:", error);
+        dispatchEvent(
+          "productDeleted",
+          { message: `"Error deleting product:${error}`, type: "error" },
+          $productDetail
+        );  
       }
     });
   },
