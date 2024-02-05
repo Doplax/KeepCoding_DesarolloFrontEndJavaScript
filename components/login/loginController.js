@@ -32,6 +32,10 @@ export const loginController = {
         { message: "Login successfully", type: "success" },
         $loginForm
       );
+      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      window.location = "/";
+
     } catch (error) {
       dispatchEvent(
         "LoginUser",
@@ -39,9 +43,7 @@ export const loginController = {
         $loginForm
       );
       console.log(error);
-    } finally {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      window.location = "/";
     }
+
   },
 };
