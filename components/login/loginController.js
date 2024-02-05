@@ -26,11 +26,7 @@ export const loginController = {
     let { username, password } = await loginController.getLoginData($loginForm);
     try {
       const jwt = await loginModel.loginUser(username, password);
-      const tokenData = {
-        jwt,
-        username
-      }
-      sessionController.setToken(tokenData)
+      sessionController.setToken(jwt)
       dispatchEvent(
         "LoginUser",
         { message: "Login successfully", type: "success" },
