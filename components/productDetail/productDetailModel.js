@@ -25,6 +25,7 @@ export const productDetailModel = {
     const response = await fetch(`http://localhost:8000/api/products/${productId}`, {
       method: "DELETE",
       headers: {
+        'Content-type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
     });

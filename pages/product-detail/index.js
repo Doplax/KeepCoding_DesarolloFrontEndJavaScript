@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const $notifications = document.querySelector("#notifications");
   const $productDetail = document.querySelector("#productDetail");
 
-  $productDetail.addEventListener("productDeleted", (event) => {
+  $productDetail.addEventListener("productDetail", (event) => {
     notificationsController.showNotification(
       $notifications,
       event.detail.message,
