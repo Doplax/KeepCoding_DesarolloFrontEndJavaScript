@@ -6,5 +6,7 @@ export class ProductCardModel {
     this.price = product.price;
     this.imageUrl = product.imageUrl;
     this.userId = product.userId
+    this.isOnSale = product.isOnSale;
+    this.productCategory = product.productCategory
   }
 }

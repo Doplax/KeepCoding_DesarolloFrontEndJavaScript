@@ -18,6 +18,7 @@ export const productListController = {
         $productList
       );
       products = await productListModel.getProducts();
+      
       //Await 2 seconds to see the loader
       await new Promise((resolve) => setTimeout(resolve, 2000));
     } catch (error) {
@@ -30,9 +31,7 @@ export const productListController = {
       dispatchEvent("finishLoadingProducts", null, $productList);
     }
 
-    if (products.length === 0) {
-      // Load empty products
-    } else {
+    if (products.length !== 0) {
       const reversedProductsArray = [...products].reverse();
 
       reversedProductsArray.forEach((product) => {

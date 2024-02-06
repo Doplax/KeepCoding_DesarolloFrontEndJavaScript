@@ -47,7 +47,6 @@ export const productDetailController = {
         console.log("Product successfully deleted");
         window.location = "/"
       } catch (error) {
-        debugger
         console.error("Error deleting product:", error);
       }
     })
