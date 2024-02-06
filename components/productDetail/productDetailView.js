@@ -7,9 +7,11 @@ export const productDetailView = {
                 <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
                     src="${product.imageUrl}" style="cursor: auto" />
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0" style="cursor: auto">
-                    <h2 class="text-sm title-font text-gray-500 tracking-widest" style="cursor: auto">
-                        ON SALE
+                    <h2 class="text-sm title-font text-gray-500 tracking-widest mb-2" style="cursor: auto">
+                        ${product.isOnSale ? "For Sale" : "Not For Sale"}
                     </h2>
+                    <span class="bg-greenColor  font-bold text-white rounded-md  text-xs py-1 px-2">${product.productCategory}</span>
+
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-1" style="cursor: auto">
                         ${product.name}
                     </h1>
